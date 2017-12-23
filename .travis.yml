@@ -1,0 +1,12 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t timcoote/iotaa:latest .
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PWD"
+  - docker push timcoote/iotaa:latest
+
+script:
+  - docker run timcoote/iotaa:latest cat /wibble
