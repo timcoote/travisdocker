@@ -1,3 +1,3 @@
-FROM ubuntu:16.04
-RUN ls > wibble
+FROM timcoote/iotaa:latest
+RUN ls -ltr > wibble
 
